@@ -52,7 +52,7 @@ LibPath                := $(LibraryPathSwitch).
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) 
+Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) 
 
 ##
 ## Main Build Targets 
@@ -83,6 +83,14 @@ $(IntermediateDirectory)/main$(DependSuffix): main.cpp
 $(IntermediateDirectory)/main$(PreprocessSuffix): main.cpp
 	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "/home/naresh/codechef/test/main.cpp"
 
+$(IntermediateDirectory)/utils$(ObjectSuffix): utils.cpp $(IntermediateDirectory)/utils$(DependSuffix)
+	$(CompilerName) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/utils.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/utils$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/utils$(DependSuffix): utils.cpp
+	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils$(ObjectSuffix) -MF$(IntermediateDirectory)/utils$(DependSuffix) -MM "/home/naresh/codechef/test/utils.cpp"
+
+$(IntermediateDirectory)/utils$(PreprocessSuffix): utils.cpp
+	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils$(PreprocessSuffix) "/home/naresh/codechef/test/utils.cpp"
+
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
 ##
@@ -92,6 +100,9 @@ clean:
 	$(RM) $(IntermediateDirectory)/main$(ObjectSuffix)
 	$(RM) $(IntermediateDirectory)/main$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/main$(PreprocessSuffix)
+	$(RM) $(IntermediateDirectory)/utils$(ObjectSuffix)
+	$(RM) $(IntermediateDirectory)/utils$(DependSuffix)
+	$(RM) $(IntermediateDirectory)/utils$(PreprocessSuffix)
 	$(RM) $(OutputFile)
 	$(RM) "/home/naresh/codechef/.build-debug/test"
 

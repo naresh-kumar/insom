@@ -87,5 +87,6 @@
   </Settings>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
+    <File Name="utils.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
