@@ -5,18 +5,17 @@
 ## Debug
 ProjectName            :=test
 ConfigurationName      :=Debug
-IntermediateDirectory  :=./Debug
-OutDir                 := $(IntermediateDirectory)
 WorkspacePath          := "/home/naresh/codechef"
 ProjectPath            := "/home/naresh/codechef/test"
+IntermediateDirectory  :=./Debug
+OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=naresh
-Date                   :=Sunday 25 November 2012
+Date                   :=Monday 26 November 2012
 CodeLitePath           :="/home/naresh/.codelite"
 LinkerName             :=g++
-ArchiveTool            :=ar rcus
 SharedObjectLinkerName :=g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
@@ -28,8 +27,6 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-CompilerName           :=g++
-C_CompilerName         :=gcc
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -38,21 +35,30 @@ PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="/home/naresh/codechef/test/test.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
-CmpOptions             := -g -O0 -Wall $(Preprocessors)
-C_CmpOptions           := -g -O0 -Wall $(Preprocessors)
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
+ArLibs                 :=  
 LibPath                := $(LibraryPathSwitch). 
+
+##
+## Common variables
+## AR, CXX, CC, CXXFLAGS and CFLAGS can be overriden using an environment variables
+##
+AR       := ar rcus
+CXX      := g++
+CC       := gcc
+CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 
 
 ##
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) 
+Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) $(IntermediateDirectory)/two$(ObjectSuffix) 
 
 ##
 ## Main Build Targets 
@@ -76,20 +82,28 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main$(DependSuffix)
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/main.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/main$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main$(DependSuffix): main.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main$(ObjectSuffix) -MF$(IntermediateDirectory)/main$(DependSuffix) -MM "/home/naresh/codechef/test/main.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main$(ObjectSuffix) -MF$(IntermediateDirectory)/main$(DependSuffix) -MM "/home/naresh/codechef/test/main.cpp"
 
 $(IntermediateDirectory)/main$(PreprocessSuffix): main.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "/home/naresh/codechef/test/main.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "/home/naresh/codechef/test/main.cpp"
 
 $(IntermediateDirectory)/utils$(ObjectSuffix): utils.cpp $(IntermediateDirectory)/utils$(DependSuffix)
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/utils.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/utils$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/utils.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/utils$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/utils$(DependSuffix): utils.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils$(ObjectSuffix) -MF$(IntermediateDirectory)/utils$(DependSuffix) -MM "/home/naresh/codechef/test/utils.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/utils$(ObjectSuffix) -MF$(IntermediateDirectory)/utils$(DependSuffix) -MM "/home/naresh/codechef/test/utils.cpp"
 
 $(IntermediateDirectory)/utils$(PreprocessSuffix): utils.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils$(PreprocessSuffix) "/home/naresh/codechef/test/utils.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils$(PreprocessSuffix) "/home/naresh/codechef/test/utils.cpp"
+
+$(IntermediateDirectory)/two$(ObjectSuffix): two.cpp $(IntermediateDirectory)/two$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/two.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/two$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/two$(DependSuffix): two.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/two$(ObjectSuffix) -MF$(IntermediateDirectory)/two$(DependSuffix) -MM "/home/naresh/codechef/test/two.cpp"
+
+$(IntermediateDirectory)/two$(PreprocessSuffix): two.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/two$(PreprocessSuffix) "/home/naresh/codechef/test/two.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -103,6 +117,9 @@ clean:
 	$(RM) $(IntermediateDirectory)/utils$(ObjectSuffix)
 	$(RM) $(IntermediateDirectory)/utils$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/utils$(PreprocessSuffix)
+	$(RM) $(IntermediateDirectory)/two$(ObjectSuffix)
+	$(RM) $(IntermediateDirectory)/two$(DependSuffix)
+	$(RM) $(IntermediateDirectory)/two$(PreprocessSuffix)
 	$(RM) $(OutputFile)
 	$(RM) "/home/naresh/codechef/.build-debug/test"
 

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeLite_Workspace Name="codechef" Database="./codechef.tags">
   <Project Name="test" Path="test/test.project" Active="Yes"/>
+  <Project Name="gen" Path="gen/gen.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="test" ConfigName="Debug"/>
+      <Project Name="gen" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="test" ConfigName="Release"/>
+      <Project Name="gen" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

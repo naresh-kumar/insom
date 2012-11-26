@@ -1,1 +1,1 @@
-./Debug/main.o ./Debug/utils.o
+./Debug/main.o ./Debug/utils.o ./Debug/two.o
