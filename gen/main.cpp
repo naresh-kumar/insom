@@ -3,10 +3,24 @@
 
 int main(int argc, char **argv)
 {
-	printf("1\n100000\n");
-	for(int i=0; i<100000; ++i)
+	int testCases = 11;
+	printf("%d\n", testCases);
+	while(testCases > 1)
 	{
-		printf("%d ", rand());
+		testCases--;
+		int n = 100000;
+		printf("%d\n", n);
+		for(int i=0; i<n; ++i)
+		{
+			printf("%d ", rand());
+		}
+		printf("\n");
 	}
-	printf("\n");
+		int n = 100000;
+		printf("%d\n", n);
+		for(int i=0; i<n; ++i)
+		{
+			printf("1000000000 ");
+		}
+		printf("\n");
 }

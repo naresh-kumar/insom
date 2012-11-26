@@ -58,7 +58,7 @@ CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) $(IntermediateDirectory)/two$(ObjectSuffix) 
+Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) $(IntermediateDirectory)/two$(ObjectSuffix) $(IntermediateDirectory)/rightsol$(ObjectSuffix) 
 
 ##
 ## Main Build Targets 
@@ -105,6 +105,14 @@ $(IntermediateDirectory)/two$(DependSuffix): two.cpp
 $(IntermediateDirectory)/two$(PreprocessSuffix): two.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/two$(PreprocessSuffix) "/home/naresh/codechef/test/two.cpp"
 
+$(IntermediateDirectory)/rightsol$(ObjectSuffix): rightsol.cpp $(IntermediateDirectory)/rightsol$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/rightsol.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/rightsol$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/rightsol$(DependSuffix): rightsol.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/rightsol$(ObjectSuffix) -MF$(IntermediateDirectory)/rightsol$(DependSuffix) -MM "/home/naresh/codechef/test/rightsol.cpp"
+
+$(IntermediateDirectory)/rightsol$(PreprocessSuffix): rightsol.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/rightsol$(PreprocessSuffix) "/home/naresh/codechef/test/rightsol.cpp"
+
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
 ##
@@ -120,6 +128,9 @@ clean:
 	$(RM) $(IntermediateDirectory)/two$(ObjectSuffix)
 	$(RM) $(IntermediateDirectory)/two$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/two$(PreprocessSuffix)
+	$(RM) $(IntermediateDirectory)/rightsol$(ObjectSuffix)
+	$(RM) $(IntermediateDirectory)/rightsol$(DependSuffix)
+	$(RM) $(IntermediateDirectory)/rightsol$(PreprocessSuffix)
 	$(RM) $(OutputFile)
 	$(RM) "/home/naresh/codechef/.build-debug/test"
 

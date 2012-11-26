@@ -5,10 +5,10 @@
 ## Debug
 ProjectName            :=gen
 ConfigurationName      :=Debug
-IntermediateDirectory  :=./Debug
-OutDir                 := $(IntermediateDirectory)
 WorkspacePath          := "/home/naresh/codechef"
 ProjectPath            := "/home/naresh/codechef/gen"
+IntermediateDirectory  :=./Debug
+OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
@@ -16,7 +16,6 @@ User                   :=naresh
 Date                   :=Monday 26 November 2012
 CodeLitePath           :="/home/naresh/.codelite"
 LinkerName             :=g++
-ArchiveTool            :=ar rcus
 SharedObjectLinkerName :=g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
@@ -28,8 +27,6 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-CompilerName           :=g++
-C_CompilerName         :=gcc
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -38,14 +35,23 @@ PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="/home/naresh/codechef/gen/gen.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
-CmpOptions             := -g -O0 -Wall $(Preprocessors)
-C_CmpOptions           := -g -O0 -Wall $(Preprocessors)
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
+ArLibs                 :=  
 LibPath                := $(LibraryPathSwitch). 
+
+##
+## Common variables
+## AR, CXX, CC, CXXFLAGS and CFLAGS can be overriden using an environment variables
+##
+AR       := ar rcus
+CXX      := g++
+CC       := gcc
+CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 
 
 ##
@@ -76,12 +82,12 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main$(DependSuffix)
-	$(CompilerName) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/gen/main.cpp" $(CmpOptions) $(ObjectSwitch)$(IntermediateDirectory)/main$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/gen/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main$(DependSuffix): main.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main$(ObjectSuffix) -MF$(IntermediateDirectory)/main$(DependSuffix) -MM "/home/naresh/codechef/gen/main.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main$(ObjectSuffix) -MF$(IntermediateDirectory)/main$(DependSuffix) -MM "/home/naresh/codechef/gen/main.cpp"
 
 $(IntermediateDirectory)/main$(PreprocessSuffix): main.cpp
-	@$(CompilerName) $(CmpOptions) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "/home/naresh/codechef/gen/main.cpp"
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main$(PreprocessSuffix) "/home/naresh/codechef/gen/main.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

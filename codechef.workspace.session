@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session Name="/home/naresh/codechef/codechef.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="3" Name="m_selectedTab"/>
   <wxString Value="/home/naresh/codechef/codechef.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/naresh/codechef/test/main.cpp" Name="FileName"/>
-      <int Value="52" Name="FirstVisibleLine"/>
-      <int Value="114" Name="CurrentLine"/>
+      <int Value="62" Name="FirstVisibleLine"/>
+      <int Value="110" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/naresh/codechef/test/utils.cpp" Name="FileName"/>
-      <int Value="25" Name="FirstVisibleLine"/>
+      <int Value="45" Name="FirstVisibleLine"/>
       <int Value="34" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/naresh/codechef/gen/main.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="5" Name="CurrentLine"/>
+      <int Value="22" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/naresh/codechef/test/two.cpp" Name="FileName"/>
+      <int Value="99" Name="FirstVisibleLine"/>
+      <int Value="127" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/naresh/codechef/test/rightsol.cpp" Name="FileName"/>
+      <int Value="74" Name="FirstVisibleLine"/>
+      <int Value="122" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
     </TabInfo>
   </TabInfoArray>

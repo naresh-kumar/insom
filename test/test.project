@@ -91,5 +91,6 @@
     <File Name="main.cpp"/>
     <File Name="utils.cpp"/>
     <File Name="two.cpp"/>
+    <File Name="rightsol.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
