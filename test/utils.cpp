@@ -31,15 +31,41 @@ using namespace std;
 #define ITER(it,a) for(typeof(a.begin()) it=a.begin();it!=a.end();it++)
 #define ALL(a) a.begin(),a.end()
 #define INF 1000000000
+#define SS ({int x;scanf("%d", &x);x;})
+
 #define V vector
 #define S string
 #define FST first
 #define SEC second
-#define SS ({int x;scanf("%d", &x);x;})
 typedef V<int> VI;
 typedef V<S> VS;
 typedef long long LL;
 typedef pair<int, int> PII;
+typedef pair<S, int> PSI;
+typedef pair<S, S> PSS;
+typedef map<S, int> MSI;
+typedef map<S, S> MSS;
+
+template<typename T>
+void printMap(T c)
+{
+	ITER(it, c)
+	{
+		cout << it->first << " " << it->second << ", ";
+	}
+	cout << endl;
+}
+
+template<typename T>
+void printList(T c)
+{
+	ITER(it, c)
+	{
+		cout << *it << ", ";
+	}
+	cout << endl;
+}
+
 int sol[5000][5000];
 using namespace std;
 int mod = 1000000007;
@@ -81,6 +107,41 @@ int pow(int a, int b)
 		answer *= a;
 	}
 	return answer;
+}
+
+LL pow(int a, int b)
+{
+	LL x=1,y=a; 
+	while(b > 0)
+	{
+		if(b%2 == 1)
+		{
+			x=(x*y);
+			if(x>MOD) x%=MOD;
+		}
+		y = (y*y);
+		if(y>MOD) y%=MOD; 
+		b /= 2;
+	}
+	return x;
+}
+
+LL InverseEuler(int n)
+{
+	if(n < ie)
+	{
+		if(IE[n] == -1)
+			IE[n] = pow(n, MOD-2);
+		return IE[n];
+	}
+		
+	return pow(n,MOD-2);
+}
+
+LL C(int n, int r)
+{	
+	r = min(r, n-r);
+	return (arr[n] * ((InverseEuler(arr[r]) * InverseEuler(arr[n-r])) % MOD)) % MOD;
 }
 
 int flodWarshall()

@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeLite_Workspace Name="codechef" Database="./codechef.tags">
-  <Project Name="test" Path="test/test.project" Active="Yes"/>
+  <Project Name="test" Path="test/test.project" Active="No"/>
   <Project Name="gen" Path="gen/gen.project" Active="No"/>
+  <Project Name="sort" Path="sort/sort.project" Active="No"/>
+  <Project Name="dataset" Path="dataset/dataset.project" Active="No"/>
+  <Project Name="granama" Path="granama/granama.project" Active="No"/>
+  <Project Name="grid" Path="grid/grid.project" Active="No"/>
+  <Project Name="pizza" Path="pizza/pizza.project" Active="No"/>
+  <Project Name="book" Path="book/book.project" Active="No"/>
+  <Project Name="count" Path="count/count.project" Active="No"/>
+  <Project Name="rmq" Path="rmq/rmq.project" Active="No"/>
+  <Project Name="cvotejan13" Path="cvotejan13/cvotejan13.project" Active="No"/>
+  <Project Name="salaryjan13" Path="salaryjan13/salaryjan13.project" Active="No"/>
+  <Project Name="primejan13" Path="primejan13/primejan13.project" Active="No"/>
+  <Project Name="threedifjan13" Path="threedifjan13/threedifjan13.project" Active="No"/>
+  <Project Name="drunkjan13" Path="drunkjan13/drunkjan13.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="test" ConfigName="Debug"/>
       <Project Name="gen" ConfigName="Debug"/>
+      <Project Name="sort" ConfigName="Debug"/>
+      <Project Name="dataset" ConfigName="Debug"/>
+      <Project Name="granama" ConfigName="Debug"/>
+      <Project Name="grid" ConfigName="Debug"/>
+      <Project Name="pizza" ConfigName="Debug"/>
+      <Project Name="book" ConfigName="Debug"/>
+      <Project Name="count" ConfigName="Debug"/>
+      <Project Name="rmq" ConfigName="Debug"/>
+      <Project Name="cvotejan13" ConfigName="Debug"/>
+      <Project Name="salaryjan13" ConfigName="Debug"/>
+      <Project Name="primejan13" ConfigName="Debug"/>
+      <Project Name="threedifjan13" ConfigName="Debug"/>
+      <Project Name="drunkjan13" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="test" ConfigName="Release"/>
       <Project Name="gen" ConfigName="Release"/>
+      <Project Name="sort" ConfigName="Release"/>
+      <Project Name="dataset" ConfigName="Release"/>
+      <Project Name="granama" ConfigName="Release"/>
+      <Project Name="grid" ConfigName="Release"/>
+      <Project Name="pizza" ConfigName="Release"/>
+      <Project Name="book" ConfigName="Release"/>
+      <Project Name="count" ConfigName="Release"/>
+      <Project Name="rmq" ConfigName="Release"/>
+      <Project Name="cvotejan13" ConfigName="Release"/>
+      <Project Name="salaryjan13" ConfigName="Release"/>
+      <Project Name="primejan13" ConfigName="Release"/>
+      <Project Name="threedifjan13" ConfigName="Release"/>
+      <Project Name="drunkjan13" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
