@@ -14,7 +14,8 @@
   <Project Name="salaryjan13" Path="salaryjan13/salaryjan13.project" Active="No"/>
   <Project Name="primejan13" Path="primejan13/primejan13.project" Active="No"/>
   <Project Name="threedifjan13" Path="threedifjan13/threedifjan13.project" Active="No"/>
-  <Project Name="drunkjan13" Path="drunkjan13/drunkjan13.project" Active="Yes"/>
+  <Project Name="drunkjan13" Path="drunkjan13/drunkjan13.project" Active="No"/>
+  <Project Name="divpro" Path="divpro/divpro.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="test" ConfigName="Debug"/>
@@ -32,6 +33,7 @@
       <Project Name="primejan13" ConfigName="Debug"/>
       <Project Name="threedifjan13" ConfigName="Debug"/>
       <Project Name="drunkjan13" ConfigName="Debug"/>
+      <Project Name="divpro" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="test" ConfigName="Release"/>
@@ -49,6 +51,7 @@
       <Project Name="primejan13" ConfigName="Release"/>
       <Project Name="threedifjan13" ConfigName="Release"/>
       <Project Name="drunkjan13" ConfigName="Release"/>
+      <Project Name="divpro" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

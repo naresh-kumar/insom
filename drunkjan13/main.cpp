@@ -52,7 +52,7 @@ void printMap(T c)
 {
 	ITER(it, c)
 	{
-		cout << it->first << " " << it->second << ", ";
+		cout << it->first << " " << it->second << " ";
 	}
 	cout << endl;
 }
@@ -62,27 +62,71 @@ void printList(T c)
 {
 	ITER(it, c)
 	{
-		cout << *it << ", ";
+		cout << *it << " ";
 	}
 	cout << endl;
 }
 
-void change(VI v)
+int n, k, m;
+VI inc;
+int solve(VI v, int start)
 {
-	v[0] = 7;
+	if(m == 1) return -1;
+	start = 0;
+	FOR(i,start, n-k+1)
+	{
+		int max = -1;
+		int max_count = 0;
+		FOR(j, i, i+k)
+		{
+			if(max < v[j]) {max = v[j]; max_count = 1;}
+			else if(max == v[j]) ++max_count;
+		}
+		if(max_count >= m)
+		{
+			int min = INF;
+			IFOR(j, i+k-1, i)
+			{
+				if(v[j] == max && inc[j] == 0)
+				{
+					v[j] = v[j] + 1;
+					inc[j] = 1;
+					int ans = solve(v, i);
+//					string s = "\t";
+//					REP(l, i) s += " ";
+//					cout << "ans " << ans << s << i + 1 << " : ";
+//					printList(v);
+//					cout << "ans " << ans << s << i + 1 << " : ";
+//					printList(inc);
+					v[j] = v[j] - 1;
+					inc[j] = 0;
+					if(ans != -1 && ans < min) min = ans;
+					if(min == 0) return 1;
+				}
+			}
+			if(min == INF) return -1;
+			return min+1;
+		}
+	}
+	return 0;
 }
 
 int main()
 {
-	int t =1;
+	int t = SS;
 	while(t--)
 	{
-		VI c;
-		c.PB(7);
-		c.PB(8);
-		printList(c);
-		change(c);
-		printList(c);
+		inc.clear();
+		VI v;
+		n = SS;
+		k = SS;
+		m = SS;
+		REP(i, n)
+		{
+			v.PB(SS);
+			inc.PB(0);
+		}
+		cout << solve(v, 0) << endl;
 	}
 	return 0;
 }

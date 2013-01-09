@@ -114,7 +114,7 @@ int main()
 			prime_count[i] = total_count;
 			++total_count;
 			
-			for(int j = i*2; j < max_val; j += i)
+			for(int j = i*i; j < max_val; j += i)
 			{
 				prime_count[j] = -1;
 			}
