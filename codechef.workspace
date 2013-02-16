@@ -15,7 +15,10 @@
   <Project Name="primejan13" Path="primejan13/primejan13.project" Active="No"/>
   <Project Name="threedifjan13" Path="threedifjan13/threedifjan13.project" Active="No"/>
   <Project Name="drunkjan13" Path="drunkjan13/drunkjan13.project" Active="No"/>
-  <Project Name="divpro" Path="divpro/divpro.project" Active="Yes"/>
+  <Project Name="divpro" Path="divpro/divpro.project" Active="No"/>
+  <Project Name="tries" Path="tries/tries.project" Active="No"/>
+  <Project Name="zombie" Path="zombie/zombie.project" Active="No"/>
+  <Project Name="feb13magicboard" Path="feb13magicboard/feb13magicboard.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="test" ConfigName="Debug"/>
@@ -34,6 +37,9 @@
       <Project Name="threedifjan13" ConfigName="Debug"/>
       <Project Name="drunkjan13" ConfigName="Debug"/>
       <Project Name="divpro" ConfigName="Debug"/>
+      <Project Name="tries" ConfigName="Debug"/>
+      <Project Name="zombie" ConfigName="Debug"/>
+      <Project Name="feb13magicboard" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="test" ConfigName="Release"/>
@@ -52,6 +58,9 @@
       <Project Name="threedifjan13" ConfigName="Release"/>
       <Project Name="drunkjan13" ConfigName="Release"/>
       <Project Name="divpro" ConfigName="Release"/>
+      <Project Name="tries" ConfigName="Release"/>
+      <Project Name="zombie" ConfigName="Release"/>
+      <Project Name="feb13magicboard" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

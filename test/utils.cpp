@@ -154,3 +154,67 @@ int flodWarshall()
 	shift[i][j] = min(shift[i][j], shift[i][k]+shift[k][j]);
 	return 0;
 }
+
+bool[] generatePrimes(int n)
+{ 
+	bool isPrime[] = new bool[n];
+	for(int i = 0; i < n-1; i+=2)
+	{
+		isPrime[i] = false;
+		isPrime[i+1] = true;
+	}
+	
+	isPrime[0] = false;
+	isPrime[1] = false;
+	isPrime[2] = true;
+	if(n%2 == 1) isPrime[n-1] = false;
+	
+	for(int i = 3; i < n; i+=2)
+	{
+		if(prime_count[i] != -1)
+		{
+			prime_count[i] = total_count;
+			++total_count;
+			
+			for(int j = i*i; j < max_val; j += i)
+			{
+				prime_count[j] = -1;
+			}
+		}
+	}
+}
+
+// fast input start--------------------------------------------------------------------------------------
+#define SIZE 1024*64
+char buffer[SIZE];
+int buffer_size = 0, pointer = 0, max_digits = 15;
+int nextInt()
+{
+	int num = 0;
+	char c;
+	int r = buffer_size - pointer;
+	if(r < max_digits)
+	{
+		memcpy(buffer, buffer + pointer, r);
+		buffer_size = r + fread(buffer + r, 1, SIZE-r, stdin);
+		pointer = 0;
+	}
+	while(true)
+	{
+		c = buffer[pointer];
+		if (c == '\n' || c == ' ')  {++pointer;return num;} 
+		else num = num*10 + c - '0';
+		++pointer;
+	}
+}
+
+int main()
+{
+	//freopen("in", "r", stdin);
+	
+	buffer_size = fread(buffer, 1, SIZE, stdin);
+	
+	int n = nextInt();
+}
+// fast input end--------------------------------------------------------------------------------------
+	

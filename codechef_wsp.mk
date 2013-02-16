@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo ----------Building project:[ divpro - Debug ]----------
-	@cd "divpro" && "$(MAKE)" -f "divpro.mk"
+	@echo ----------Building project:[ feb13magicboard - Debug ]----------
+	@cd "feb13magicboard" && "$(MAKE)" -f "feb13magicboard.mk"
 clean:
-	@echo ----------Cleaning project:[ divpro - Debug ]----------
-	@cd "divpro" && "$(MAKE)" -f "divpro.mk" clean
+	@echo ----------Cleaning project:[ feb13magicboard - Debug ]----------
+	@cd "feb13magicboard" && "$(MAKE)" -f "feb13magicboard.mk" clean

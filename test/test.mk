@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=naresh
-Date                   :=Monday 26 November 2012
+Date                   :=Wednesday 16 January 2013
 CodeLitePath           :="/home/naresh/.codelite"
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
@@ -58,7 +58,7 @@ CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) $(IntermediateDirectory)/two$(ObjectSuffix) $(IntermediateDirectory)/rightsol$(ObjectSuffix) 
+Objects=$(IntermediateDirectory)/main$(ObjectSuffix) $(IntermediateDirectory)/utils$(ObjectSuffix) 
 
 ##
 ## Main Build Targets 
@@ -97,22 +97,6 @@ $(IntermediateDirectory)/utils$(DependSuffix): utils.cpp
 $(IntermediateDirectory)/utils$(PreprocessSuffix): utils.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/utils$(PreprocessSuffix) "/home/naresh/codechef/test/utils.cpp"
 
-$(IntermediateDirectory)/two$(ObjectSuffix): two.cpp $(IntermediateDirectory)/two$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/two.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/two$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/two$(DependSuffix): two.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/two$(ObjectSuffix) -MF$(IntermediateDirectory)/two$(DependSuffix) -MM "/home/naresh/codechef/test/two.cpp"
-
-$(IntermediateDirectory)/two$(PreprocessSuffix): two.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/two$(PreprocessSuffix) "/home/naresh/codechef/test/two.cpp"
-
-$(IntermediateDirectory)/rightsol$(ObjectSuffix): rightsol.cpp $(IntermediateDirectory)/rightsol$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/naresh/codechef/test/rightsol.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/rightsol$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/rightsol$(DependSuffix): rightsol.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/rightsol$(ObjectSuffix) -MF$(IntermediateDirectory)/rightsol$(DependSuffix) -MM "/home/naresh/codechef/test/rightsol.cpp"
-
-$(IntermediateDirectory)/rightsol$(PreprocessSuffix): rightsol.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/rightsol$(PreprocessSuffix) "/home/naresh/codechef/test/rightsol.cpp"
-
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
 ##
@@ -125,12 +109,6 @@ clean:
 	$(RM) $(IntermediateDirectory)/utils$(ObjectSuffix)
 	$(RM) $(IntermediateDirectory)/utils$(DependSuffix)
 	$(RM) $(IntermediateDirectory)/utils$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/two$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/two$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/two$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/rightsol$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/rightsol$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/rightsol$(PreprocessSuffix)
 	$(RM) $(OutputFile)
 	$(RM) "/home/naresh/codechef/.build-debug/test"
 

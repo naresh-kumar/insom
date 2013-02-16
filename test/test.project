@@ -22,6 +22,7 @@
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[
       
+      
       ]]>
       </Environment>
       <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
@@ -60,6 +61,7 @@
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[
       
+      
       ]]>
       </Environment>
       <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
@@ -92,7 +94,5 @@
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
     <File Name="utils.cpp"/>
-    <File Name="two.cpp"/>
-    <File Name="rightsol.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
